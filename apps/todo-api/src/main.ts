@@ -16,7 +16,14 @@ app.get('/api/todos', (req, res) => {
 });
 
 app.post('/api/todos', (req, res) => {
-  todos.push(req.body);
+  const todo: Todo = {
+    id: todos.length,
+    text: req.body,
+    done: false,
+  };
+
+  todos.push(todo);
+
   res.json(todos);
 });
 
