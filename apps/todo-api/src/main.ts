@@ -6,6 +6,7 @@
 import * as express from 'express';
 
 const app = express();
+const todo: string[] = [];
 
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to todo-api!' });
