@@ -9,8 +9,15 @@ import { Todo } from '@nx-workshop/shared/domain';
 const app = express();
 const todos: Todo[] = [];
 
+app.use(express.json());
+
 app.get('/api/todos', (req, res) => {
-  res.send(todos);
+  res.json(todos);
+});
+
+app.post('/api/todos', (req, res) => {
+  todos.push(req.body);
+  res.json(todos);
 });
 
 const port = process.env.port || 3333;
