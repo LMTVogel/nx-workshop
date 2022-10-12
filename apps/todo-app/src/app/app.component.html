@@ -1,1 +1,4 @@
-<div class="oi">aasd</div>
+<h1>Welcome to {{title}}!</h1>
+<input type="text" [(ngModel)]="newTodoText">
+<button (click)="addTodo()" [disabled]="!validateTodo()">Add</button>
+<pre>{{todoService.todos$ | async | json}}</pre>
