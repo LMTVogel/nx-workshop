@@ -4,12 +4,13 @@
  */
 
 import * as express from 'express';
+import { Todo } from '@nx-workshop/shared/domain';
 
 const app = express();
-const todo: string[] = [];
+const todos: Todo[] = [];
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to todo-api!' });
+app.get('/api/todos', (req, res) => {
+  res.send(todos);
 });
 
 const port = process.env.port || 3333;
