@@ -18,7 +18,7 @@ app.get('/api/todos', (req, res) => {
 app.post('/api/todos', (req, res) => {
   const todo: Todo = {
     id: todos.length,
-    text: req.body,
+    text: req.body.text,
     done: false,
   };
 
