@@ -18,7 +18,6 @@ export class TodoService {
   }
 
   public addTodo(text: string): void {
-    console.log(text);
     this.httpClient
       .post<Todo[]>('/api/todos', {
         text,
