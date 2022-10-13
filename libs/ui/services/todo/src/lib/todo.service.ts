@@ -17,4 +17,8 @@ export class TodoService {
   public addTodo(text: string): Observable<Todo> {
     return this.httpClient.post<Todo>(this.endpoint, { text });
   }
+
+  public removeTodo(id: number): Observable<Todo[]> {
+    return this.httpClient.delete<Todo[]>(`${this.endpoint}/${id}`);
+  }
 }

@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
     this.todoService.addTodo(this.newTodoText).subscribe(() => this.getTodos());
   }
 
+  removeTodo(todo: Todo): void {
+    this.todoService.removeTodo(todo.id).subscribe(() => this.getTodos());
+  }
+
   validateTodo(): boolean {
     return this.newTodoText != '';
   }
