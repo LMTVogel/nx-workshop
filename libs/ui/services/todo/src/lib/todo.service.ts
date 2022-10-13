@@ -6,13 +6,15 @@ import { Todo } from '@nx-workshop/shared/domain';
 
 @Injectable({ providedIn: 'root' })
 export class TodoService {
+  private endpoint = '/api/todos';
+
   constructor(private httpClient: HttpClient) {}
 
   public getTodos(): Observable<Todo[]> {
-    return this.httpClient.get<Todo[]>('/api/todos');
+    return this.httpClient.get<Todo[]>(this.endpoint);
   }
 
   public addTodo(text: string): Observable<Todo> {
-    return this.httpClient.post<Todo>('/api/todos', { text });
+    return this.httpClient.post<Todo>(this.endpoint, { text });
   }
 }
