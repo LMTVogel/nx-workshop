@@ -2,7 +2,7 @@ import * as express from 'express';
 import { Todo } from '@nx-workshop/shared/domain';
 
 const app = express();
-let todos: Todo[] = [];
+const todos: Todo[] = [];
 
 app.use(express.json());
 
@@ -23,10 +23,12 @@ app.post('/api/todos', (req, res) => {
 });
 
 app.delete('/api/todos/:id', (req, res) => {
-  const todo = todos.find((todo) => todo.id === Number(req.params.id));
+  const todoIndex = todos.findIndex(
+    (todo) => todo.id === Number(req.params.id)
+  );
 
-  if (todo) {
-    todos.splice(todos.indexOf(todo), 1);
+  if (todoIndex > -1) {
+    todos.splice(todoIndex, 1);
   }
 
   res.json(todos);
