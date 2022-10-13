@@ -1,8 +1,3 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import * as express from 'express';
 import { Todo } from '@nx-workshop/shared/domain';
 
@@ -24,7 +19,7 @@ app.post('/api/todos', (req, res) => {
 
   todos.push(todo);
 
-  res.json(todos);
+  res.json(todo);
 });
 
 const port = process.env.port || 3333;
