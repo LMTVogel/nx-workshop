@@ -23,15 +23,14 @@ app.post('/api/todos', (req, res) => {
 });
 
 app.delete('/api/todos/:id', (req, res) => {
-  const todoIndex = todos.findIndex(
-    (todo) => todo.id === Number(req.params.id)
-  );
+  const id = Number(req.params.id);
+  const todoIndex = todos.findIndex((todo) => todo.id === id);
 
   if (todoIndex > -1) {
     todos.splice(todoIndex, 1);
   }
 
-  res.json(todos);
+  res.json({ deleted: id });
 });
 
 const port = process.env.port || 3333;
