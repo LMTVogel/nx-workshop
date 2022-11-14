@@ -1,0 +1,7 @@
+<ul class="todo-list">
+  <nx-workshop-todo-item
+    *ngFor="let item of items"
+    [item]="item"
+    (deleteClick)="onDeleteClick($event)"
+  ></nx-workshop-todo-item>
+</ul>

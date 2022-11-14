@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { TodoModule } from '@nx-workshop/ui/services/todo';
 import { FormsModule } from '@angular/forms';
+import { UiTodoModule } from '@nx-workshop/ui/todo';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, TodoModule, FormsModule],
+  imports: [BrowserModule, UiTodoModule, TodoModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

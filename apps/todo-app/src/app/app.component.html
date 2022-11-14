@@ -1,12 +1,6 @@
 <div class="container">
   <h1>Welcome to {{title}}!</h1>
-  <input type="text" [(ngModel)]="newTodoText">
-  <button (click)="addTodo()" [disabled]="!validateTodo()">Add</button>
-  <ul class="todo-list">
-    <li *ngFor="let todo of todos" class="todo-list__item">
-      <span>{{todo.text}}</span>
-      <button (click)="removeTodo(todo)">X</button>
-    </li>
-  </ul>
+  <nx-workshop-todo-form (createItem)="addTodo($event)"></nx-workshop-todo-form>
+  <nx-workshop-todo-list [items]="todos" (deleteClick)="removeTodo($event)"></nx-workshop-todo-list>
 </div>
 

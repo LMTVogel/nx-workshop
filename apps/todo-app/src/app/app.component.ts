@@ -9,7 +9,6 @@ import { Todo } from '@nx-workshop/shared/domain';
 })
 export class AppComponent implements OnInit {
   title = 'NX workshop To Do App';
-  newTodoText = '';
   todos: Todo[] = [];
 
   constructor(public todoService: TodoService) {}
@@ -22,15 +21,15 @@ export class AppComponent implements OnInit {
     this.todoService.getTodos().subscribe((todos) => (this.todos = todos));
   }
 
-  addTodo(): void {
-    this.todoService.addTodo(this.newTodoText).subscribe(() => this.getTodos());
+  addTodo(text: string | null): void {
+    if (!text) {
+      return;
+    }
+
+    this.todoService.addTodo(text).subscribe(() => this.getTodos());
   }
 
   removeTodo(todo: Todo): void {
     this.todoService.removeTodo(todo.id).subscribe(() => this.getTodos());
-  }
-
-  validateTodo(): boolean {
-    return this.newTodoText != '';
   }
 }

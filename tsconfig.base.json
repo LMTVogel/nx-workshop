@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@nx-workshop/shared/domain": ["libs/shared/domain/src/index.ts"],
-      "@nx-workshop/ui/services/todo": ["libs/ui/services/todo/src/index.ts"]
+      "@nx-workshop/ui/services/todo": ["libs/ui/services/todo/src/index.ts"],
+      "@nx-workshop/ui/todo": ["libs/ui/todo/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
