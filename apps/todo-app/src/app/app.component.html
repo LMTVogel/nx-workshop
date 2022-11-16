@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Welcome to {{title}}!</h1>
   <nx-workshop-todo-form (createItem)="addTodo($event)"></nx-workshop-todo-form>
-  <nx-workshop-todo-list [items]="todos" (deleteClick)="removeTodo($event)"></nx-workshop-todo-list>
+  <nx-workshop-todo-list [items]="todos" [editable]="true" (deleteClick)="removeTodo($event)"></nx-workshop-todo-list>
 </div>
 

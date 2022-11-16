@@ -10,6 +10,9 @@ export class TodoListComponent {
   @Input()
   items!: Todo[];
 
+  @Input()
+  editable!: boolean;
+
   @Output()
   deleteClick = new EventEmitter<Todo>();
 

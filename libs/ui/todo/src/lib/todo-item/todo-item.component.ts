@@ -11,6 +11,9 @@ export class TodoItemComponent {
   @Input()
   item!: Todo;
 
+  @Input()
+  editable!: boolean;
+
   @Output()
   deleteClick = new EventEmitter<Todo>();
 

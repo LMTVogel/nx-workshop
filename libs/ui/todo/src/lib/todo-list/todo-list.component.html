@@ -2,6 +2,7 @@
   <nx-workshop-todo-item
     *ngFor="let item of items"
     [item]="item"
+    [editable]="editable"
     (deleteClick)="onDeleteClick($event)"
   ></nx-workshop-todo-item>
 </ul>
